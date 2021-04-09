@@ -1,14 +1,14 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 母婴-跳一跳
+name: 手机狂欢城
 
 on:
     workflow_dispatch:
     schedule:
-        - cron: "4 */6 * * *"
+        - cron: "5 0-23/6 * * *"
     repository_dispatch:
-        types: jd_jump_jump
+        types: z_carnivalcity
 
 jobs:
     build:
@@ -23,7 +23,7 @@ jobs:
             - name: npm install
               run: |
                   npm install
-            - name: "运行 【母婴-跳一跳】"
+            - name: "运行 【手机狂欢城】"
               run: |
                   node onlyOneExecute.js
               env:
@@ -44,4 +44,4 @@ jobs:
                   QYWX_AM: ${{ github.event.client_payload.QYWX_AM || secrets.QYWX_AM }}
                   PUSH_PLUS_TOKEN: ${{ github.event.client_payload.PUSH_PLUS_TOKEN || secrets.PUSH_PLUS_TOKEN }}
                   PUSH_PLUS_USER: ${{ github.event.client_payload.PUSH_PLUS_USER || secrets.PUSH_PLUS_USER }}
-                  SYNCURL: https://raw.githubusercontent.com/HenryTSZ/jsd/main/jd_jump_jump.js
+                  SYNCURL: https://raw.githubusercontent.com/ElsaKing/DogDog/main/z_carnivalcity.js
